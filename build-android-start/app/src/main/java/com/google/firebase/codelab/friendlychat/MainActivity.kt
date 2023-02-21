@@ -66,11 +66,13 @@ class MainActivity : AppCompatActivity() {
         // "10.0.2.2" is a special IP address which allows the Android Emulator
         // to connect to "localhost" on the host computer. The port values (9xxx)
         // must match the values defined in the firebase.json file.
-        if (BuildConfig.DEBUG) {
-            Firebase.database.useEmulator("10.0.2.2", 9000)
-            Firebase.auth.useEmulator("10.0.2.2", 9099)
-            Firebase.storage.useEmulator("10.0.2.2", 9199)
-        }
+
+        // disables this to use the online firebase
+//        if (BuildConfig.DEBUG) {
+//            Firebase.database.useEmulator("10.0.2.2", 9000)
+//            Firebase.auth.useEmulator("10.0.2.2", 9099)
+//            Firebase.storage.useEmulator("10.0.2.2", 9199)
+//        }
 
         // Initialize Firebase Auth and check if the user is signed in
         auth = Firebase.auth
